@@ -83,3 +83,11 @@ function century(year) {
     return Math.ceil(year / 100);
   }
 }
+/*We need a function that can transform a number (integer) into a string.
+
+What ways of achieving this do you know?*/
+function numberToString(num) {
+  let a = String(num);
+  return a;
+  // Return a string of the number here!
+}
