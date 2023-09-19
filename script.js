@@ -99,4 +99,18 @@ Note: Don't worry, all inputs will be strings, and every string is a perfectly v
 const stringToNumber = function(str){
   
   return Number(str);
+}/*Given a non-negative integer n, write a function to_binary/ToBinary which returns that number in a binary format.
+
+to_binary(1)  /* should return 1 */
+/*to_binary(5)  /* should return 101 */
+/*to_binary(11) /* should return 1011 */
+function toBinary(n){
+  let binary = '';
+  while (n > 0) {
+    const remainder = n % 2;
+    binary = remainder + binary;
+    n = Math.floor(n / 2);
+  }
+
+  return Number(binary);
 }
