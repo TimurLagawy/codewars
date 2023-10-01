@@ -90,22 +90,21 @@ function numberToString(num) {
   let a = String(num);
   return a;
   // Return a string of the number here!
-}/*Note: This kata is inspired by Convert a Number to a String!. Try that one too.
+} /*Note: This kata is inspired by Convert a Number to a String!. Try that one too.
 
 Description
 We need a function that can transform a string into a number. What ways of achieving this do you know?
 
 Note: Don't worry, all inputs will be strings, and every string is a perfectly valid representation of an integral number.*/
-const stringToNumber = function(str){
-  
+const stringToNumber = function (str) {
   return Number(str);
-}/*Given a non-negative integer n, write a function to_binary/ToBinary which returns that number in a binary format.
+}; /*Given a non-negative integer n, write a function to_binary/ToBinary which returns that number in a binary format.
 
 to_binary(1)  /* should return 1 */
 /*to_binary(5)  /* should return 101 */
 /*to_binary(11) /* should return 1011 */
-function toBinary(n){
-  let binary = '';
+function toBinary(n) {
+  let binary = "";
   while (n > 0) {
     const remainder = n % 2;
     binary = remainder + binary;
@@ -113,4 +112,16 @@ function toBinary(n){
   }
 
   return Number(binary);
+} /*Create a function that takes an integer as an argument and returns for even numbers or for odd numbers 
+function even_or_odd(number) {
+  return number % 2 ? "Odd" : "Even"
+}*/
+function evenOrOdd(number) {
+  if (number % 2 === 1) {
+    return "Odd";
+  } else if (number % 2 === 0) {
+    return "Even";
+  } else if (number % 2 === -1) {
+    return "Odd";
+  }
 }
