@@ -125,3 +125,20 @@ function evenOrOdd(number) {
     return "Odd";
   }
 }
+/*Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
+
+Note: input will never be an empty string*/
+function fakeBin(x) {
+  let xStr = x.toString();
+  let result = "";
+
+  for (let i = 0; i < xStr.length; i++) {
+    if (parseInt(xStr[i]) < 5) {
+      result += "0";
+    } else {
+      result += "1";
+    }
+  }
+
+  return result;
+}
