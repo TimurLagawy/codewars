@@ -205,7 +205,11 @@ function noSpace(x) {
 solution('abc', 'bc') // returns true
 solution('abc', 'd') // returns false*/
 function solution(str, ending) {
-  if (ending[ending.length - 1] == str[str.length - 1]) {
+  let j = "";
+  for (i = str.length - ending.length; i < str.length; i++) {
+    j += str[i];
+  }
+  if (ending == j) {
     return true;
   } else {
     return false;
