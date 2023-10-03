@@ -217,9 +217,23 @@ function solution(str, ending) {
 }
 /*This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.*/
 function simpleMultiplication(number) {
+  //return n * (n % 2 ? 9 : 8);
   if (number % 2 == 0) {
     return number * 8;
   } else {
     return number * 9;
   }
+}
+/*Write a function that accepts an integer n and a string s as parameters, and returns a string of s repeated exactly n times.
+
+Examples (input -> output)
+6, "I"     -> "IIIIII"
+5, "Hello" -> "HelloHelloHelloHelloHello"*/
+//repeatStr = (n, s) => s.repeat(n)
+function repeatStr(n, s) {
+  let str = "";
+  for (let i = 0; i < n; i++) {
+    str += s;
+  }
+  return str;
 }
