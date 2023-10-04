@@ -299,7 +299,8 @@ function switchItUp(n) {
 
 Complete the function that takes a string as an argument representing the current state of the light and returns a string representing the state the light should change to.
 
-For example, when the input is green, output should be yellow.*/
+For example, when the input is green, output should be yellow. 
+return current === 'yellow' ? 'red' : current === 'green' ? 'yellow' : 'green';*/
 function updateLight(current) {
   if (current == "green") {
     return "yellow";
@@ -308,4 +309,14 @@ function updateLight(current) {
   } else if (current == "red") {
     return "green";
   }
+}
+/*You are given two interior angles (in degrees) of a triangle.
+
+Write a function to return the 3rd.
+
+Note: only positive integers will be tested.
+
+https://en.wikipedia.org/wiki/Triangle*/
+function otherAngle(a, b) {
+  return 180 - a - b;
 }
