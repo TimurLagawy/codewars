@@ -451,9 +451,26 @@ var questions = [{
     choices: ["Philadelphia", "At the bottom", "Frankie's pub", "China"],
     corAnswer: 0,
     usersAnswer: null
-}];*/
+}];
+questions.forEach(x => x.usersAnswer = null);*/
 function addAnswer() {
   for (let i = 0; i < questions.length; i++) {
     questions[i].usersAnswer = null;
   }
+}
+/*Colour plays an important role in our lifes. Most of us like this colour better then another. User experience specialists believe that certain colours have certain psychological meanings for us.
+
+You are given a 2D array, composed of a colour and its 'common' association in each array element. The function you will write needs to return the colour as 'key' and association as its 'value'. For example:
+
+var array = [["white", "goodness"], ...] //returns [{white: 'goodness'}, ...]
+const colourAssociation = array => array.map(([colour, association]) => ({[colour]:association}))*/
+
+function colourAssociation(array) {
+  let arr = [];
+  for (let i = 0; i < array.length; i++) {
+    let obj = {};
+    obj[array[i][0]] = array[i][1];
+    arr.push(obj);
+  }
+  return arr;
 }
