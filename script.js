@@ -395,3 +395,34 @@ function mergeArrays(arr1, arr2) {
 
   return mergedArray;
 }
+/*For this kata you will have to forget how to add two numbers.
+
+It can be best explained using the following meme:
+
+Dayane Rivas adding up a sum while competing in the Guatemalan television show "Combate" in May 2016
+
+In simple terms, our method does not like the principle of carrying over numbers and just writes down every number it calculates :-)
+
+You may assume both integers are positive integers.*/
+function add(num1, num2) {
+  let n1 = String(num1);
+  let n2 = String(num2);
+
+  if (n1.length < n2.length) {
+    for (let i = 0; i < n2.length - n1.length; i++) {
+      n1 = "0" + n1;
+    }
+  } else if (n2.length < n1.length) {
+    for (let i = 0; i < n1.length - n2.length; i++) {
+      n2 = "0" + n2;
+    }
+  } else {
+  }
+
+  let str = "";
+  for (let i = 0; i < n1.length; i++) {
+    str = str + (Number(n1[i]) + Number(n2[i]));
+  }
+
+  return parseInt(str);
+}
