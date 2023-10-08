@@ -543,3 +543,16 @@ function extractNameFromTemplate(value) {
   }
   return value.substring(startIndex, endIndex);
 }
+/**
+ * Returns a first char of the given string.
+ *
+ * @param {string} value
+ * @return {string}
+ *
+ * @example
+ *   'John Doe'  => 'J'
+ *   'cat'       => 'c'
+ */
+function getFirstChar(value) {
+  return value[0];
+}
