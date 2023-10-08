@@ -524,3 +524,22 @@ function getStringFromTemplate(firstName, lastName) {
   res += "!";
   return res;
 }
+/**
+ * Extracts a name from template string 'Hello, First_Name Last_Name!'.
+ *
+ * @param {string} value
+ * @return {string}
+ *
+ * @example
+ *   'Hello, John Doe!' => 'John Doe'
+ *   'Hello, Chuck Norris!' => 'Chuck Norris'
+ */
+function extractNameFromTemplate(value) {
+  const startIndex = value.indexOf("Hello, ") + "Hello, ".length;
+  const endIndex = value.lastIndexOf("!");
+
+  if (startIndex >= 0 && endIndex >= 0) {
+    return value.substring(startIndex, endIndex);
+  }
+  return value.substring(startIndex, endIndex);
+}
