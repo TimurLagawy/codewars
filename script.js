@@ -556,3 +556,17 @@ function extractNameFromTemplate(value) {
 function getFirstChar(value) {
   return value[0];
 }
+/**
+ * Removes a leading and trailing whitespace characters from string.
+ *
+ * @param {string} value
+ * @return {string}
+ *
+ * @example
+ *   '  Abracadabra'    => 'Abracadabra'
+ *   'cat'              => 'cat'
+ *   '\tHello, World! ' => 'Hello, World!'
+ */
+function removeLeadingAndTrailingWhitespaces(value) {
+  return value.trim();
+}
