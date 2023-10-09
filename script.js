@@ -588,3 +588,33 @@ function repeatString(value, count) {
   }
   return str;
 }
+/**
+ * Remove the first occurrence of string inside another string
+ *
+ * @param {string} str
+ * @param {string} value
+ * @return {string}
+ *
+ * @example
+ *   'To be or not to be', 'not'  => 'To be or  to be'
+ *   'I like legends', 'end' => 'I like legs',
+ *   'ABABAB','BA' => 'ABAB'
+ */
+function removeFirstOccurrences(str, value) {
+  let res = "";
+  for (let i = 0; i < str.length; i += 1) {
+    let match = true;
+    for (let j = 0; j < value.length; j += 1) {
+      if (value[j] !== str[i + j]) {
+        match = false;
+        break;
+      }
+    }
+    if (!match) {
+      res += str[i];
+    } else {
+      i += value.length - 1; // Skip characters matched by the inner loop
+    }
+  }
+  return res;
+}
