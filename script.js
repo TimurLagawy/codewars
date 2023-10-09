@@ -638,3 +638,20 @@ function unbracketTag(str) {
   }
   return res;
 }
+/**
+ * Converts all characters of the specified string into the upper case
+ *
+ * @param {string} str
+ * @return {string}
+ *
+ * @example
+ *   'Thunderstruck' => 'THUNDERSTRUCK'
+ *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+ */
+function convertToUpperCase(str) {
+  let res = "";
+  for (let i = 0; i < str.length; i += 1) {
+    res += str[i].toUpperCase();
+  }
+  return res;
+}
