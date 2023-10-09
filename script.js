@@ -601,22 +601,15 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-  let res = "";
-  for (let i = 0; i < str.length; i += 1) {
-    let match = true;
-    for (let j = 0; j < value.length; j += 1) {
-      if (value[j] !== str[i + j]) {
-        match = false;
-        break;
-      }
-    }
-    if (!match) {
-      res += str[i];
-    } else {
-      i += value.length - 1; // Skip characters matched by the inner loop
-    }
+  let res = '';
+  for (let i = 0; i < str.indexOf(value); i += 1) {
+    res += str[i];
   }
-  return res;
+  let res1 = '';
+  for (let j = str.indexOf(value) + value.length; j < str.length; j += 1) {
+    res1 += str[j];
+  }
+  return res + res1;
 }
 /**
  * Remove the first and last angle brackets from tag string
