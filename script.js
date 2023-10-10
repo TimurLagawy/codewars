@@ -601,11 +601,11 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-  let res = '';
+  let res = "";
   for (let i = 0; i < str.indexOf(value); i += 1) {
     res += str[i];
   }
-  let res1 = '';
+  let res1 = "";
   for (let j = str.indexOf(value) + value.length; j < str.length; j += 1) {
     res1 += str[j];
   }
@@ -664,6 +664,52 @@ function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-  const array = str.split(';');
+  const array = str.split(";");
   return array;
+}
+/*
+ * Returns the string representation of rectangle with specified width and height
+ * using pseudograhic chars
+ *
+ * @param {number} width
+ * @param {number} height
+ * @return {string}
+ *
+ * @example
+ *
+ *            '┌────┐\n'+
+ *  (6,4) =>  '│    │\n'+
+ *            '│    │\n'+
+ *            '└────┘\n'
+ *
+ *  (2,2) =>  '┌┐\n'+
+ *            '└┘\n'
+ *
+ *             '┌──────────┐\n'+
+ *  (12,3) =>  '│          │\n'+
+ *             '└──────────┘\n'
+ *
+ */
+function getRectangleString(width, height) {
+  let str = "";
+  const first = "┌";
+  const last = "┐\n";
+  str += first;
+  for (let i = 1; i < width - 1; i += 1) {
+    str += "─";
+  }
+  str += last;
+  for (let i = 1; i < height - 1; i += 1) {
+    str += "│";
+    for (let j = 1; j < width - 1; j += 1) {
+      str += " ";
+    }
+    str += "│\n";
+  }
+  str += "└";
+  for (let i = 1; i < width - 1; i += 1) {
+    str += "─";
+  }
+  str += "┘\n";
+  return str;
 }
