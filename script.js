@@ -746,3 +746,25 @@ function encodeToRot13(str) {
   }
   return res;
 }
+/**
+ * Returns true if the value is string; otherwise false.
+ * @param {string} value
+ * @return {boolean}
+ *
+ * @example
+ *   isString() => false
+ *   isString(null) => false
+ *   isString([]) => false
+ *   isString({}) => false
+ *   isString('test') => true
+ *   isString(new String('test')) => true
+ */
+function isString(value) {
+  let res;
+  if (typeof value === "string" || value instanceof String) {
+    res = true;
+  } else {
+    res = false;
+  }
+  return res;
+}
