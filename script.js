@@ -977,3 +977,17 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
 function getLastDigit(value) {
   return value % 10;
 }
+/**
+ * Returns a number by given string representation.
+ *
+ * @param {string} value
+ * @return {number}
+ *
+ * @example:
+ *    '100'     => 100
+ *     '37'     => 37
+ * '-525.5'     => -525.5
+ */
+function parseNumberFromString(value) {
+  return Number(value);
+}
