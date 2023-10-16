@@ -1086,3 +1086,21 @@ function toNumber(value, def) {
 function findElement(arr, value) {
   return arr.includes(value, 0) ? arr.indexOf(value) : -1;
 }
+/**
+ * Generates an array of odd numbers of the specified length
+ *
+ * @param {number} len
+ * @return {array}
+ *
+ * @example
+ *    1 => [ 1 ]
+ *    2 => [ 1, 3 ]
+ *    5 => [ 1, 3, 5, 7, 9 ]
+ */
+function generateOdds(len) {
+  if (len === 1) {
+    return [1];
+  }
+  /* Array.from({ length: len }, (v, k) => k *2 + 1); */
+  return Array.from({ length: len }, (_, index) => index * 2 + 1);
+}
