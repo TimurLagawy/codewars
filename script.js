@@ -1117,8 +1117,23 @@ function generateOdds(len) {
  *    [] => []
  */
 function doubleArray(arr) {
-  if (arr[0] === '') {
+  if (arr[0] === "") {
     return arr;
   }
   return arr.concat(arr);
+}
+/**
+ * Returns an array of positive numbers from the specified array in original order
+ *
+ * @param {array} arr
+ * @return {array}
+ *
+ * @example
+ *    [ 0, 1, 2, 3, 4, 5 ] => [ 1, 2, 3, 4, 5 ]
+ *    [-1, 2, -5, -4, 0] => [ 2 ]
+ *    [] => []
+ */
+function getArrayOfPositives(arr) {
+  const results = arr.filter((item) => item > 0);
+  return results;
 }
