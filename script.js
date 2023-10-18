@@ -1323,3 +1323,30 @@ function getArrayOfStrings(arr) {
   const results = arr.filter((item) => typeof item === "string");
   return results;
 }
+/**
+ * Removes falsy values from the specified array
+ * Falsy values: false, null, 0, "", undefined, and NaN.
+ * (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean#Description)
+ *
+ * @param {array} arr
+ * @return {array}
+ *
+ * @example
+ *    [ 0, false, 'cat', NaN, true, '' ] => [ 'cat', true ]
+ *    [ 1, 2, 3, 4, 5, 'false' ]         => [ 1, 2, 3, 4, 5, 'false' ]
+ *    [ false, 0, NaN, '', undefined ]   => [ ]
+ */
+function removeFalsyValues(arr) {
+  /* let results = arr.filter((item) => item !== false);
+  results = arr.filter((item) => item !== null);
+  results = arr.filter((item) => item !== undefined);
+  results = arr.filter((item) => item !== '');
+  results = arr.filter((item) => item !== 0);
+  results = arr.filter((item) => !Number.isNaN(item));
+  return results; ошибка - нужно вызывать 1 раз фильтр или в разные массивы писать новый массив */
+  // return arr.filter(item => Boolean(item));
+  const results = arr.filter((item) => item !== false && item !== null);
+  const res1 = results.filter((item) => item !== 0 && item !== undefined);
+  const res2 = res1.filter((item) => item !== "" && !Number.isNaN(item));
+  return res2;
+}
