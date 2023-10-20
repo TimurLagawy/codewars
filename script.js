@@ -1404,3 +1404,17 @@ function insertItem(arr, item, index) {
 function getHead(arr, n) {
   return arr.slice(0, n); // копия массива с 0 индекса без элемента n
 }
+/**
+ * Returns the n last items of the specified array
+ *
+ * @param {array} arr
+ * @param {number} n
+ *
+ * @example
+ *    [ 1, 3, 4, 5 ], 2  => [ 4, 5 ]
+ *    [ 'a', 'b', 'c', 'd'], 3  => [ 'b', 'c', 'd' ]
+ */ // return arr.slice(-n); вернёт удалённые с конца массива элементы (т.к. индекс отрицательный)
+function getTail(arr, n) {
+  return arr.slice(-n);
+  // return arr.splice(0, arr.length - n);
+}
