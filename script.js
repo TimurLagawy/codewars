@@ -1658,7 +1658,7 @@ function findAllOccurrences(arr, n) {
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
 function toStringList(arr) {
-  return arr.join(',');
+  return arr.join(",");
 }
 /**
  * Sorts the specified array by country name first and city name
@@ -1693,4 +1693,29 @@ function sortCitiesArray(arr) {
     }
     return a.country.localeCompare(b.country);
   });
+}
+/**
+ * Creates an identity matrix of the specified size
+ *
+ * @param {number} n
+ * @return {array}
+ *
+ * @example
+ *     1  => [[1]]
+ *
+ *     2 => [[1,0],
+ *           [0,1]]
+ *
+ *          [[1,0,0,0,0],
+ *           [0,1,0,0,0],
+ *     5 =>  [0,0,1,0,0],
+ *           [0,0,0,1,0],
+ *           [0,0,0,0,1]]
+ */
+function getIdentityMatrix(n) {
+  const arr = [];
+  arr.length = n;
+  return Array.from({ length: n }, () => arr.fill(1));
+  // return Array.from({ length: n }, ($, i)
+  // => Array.from({ length: n }, (_, j) => (i === j ? 1 : 0)));
 }
