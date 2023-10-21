@@ -1719,3 +1719,21 @@ function getIdentityMatrix(n) {
   // return Array.from({ length: n }, ($, i)
   // => Array.from({ length: n }, (_, j) => (i === j ? 1 : 0)));
 }
+/**
+ * Creates an array of integers from the specified start to end (inclusive)
+ *
+ * @param {number} start
+ * @param {number} end
+ * @return {array}
+ *
+ * @example
+ *     1, 5  => [ 1, 2, 3, 4, 5 ]
+ *    -2, 2  => [ -2, -1, 0, 1, 2 ]
+ *     0, 100 => [ 0, 1, 2, ..., 100 ]
+ *     3, 3   => [ 3 ]
+ */
+function getIntervalArray(start, end) {
+  // Array.from({ length: end - start + 1}, (v, k) => k); выдаёт массив от 0 до end
+  return Array.from({ length: end - start + 1 }, ($, index) => start + index);
+  // $ или _ вариант объявления переменной
+}
