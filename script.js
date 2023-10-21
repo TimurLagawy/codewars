@@ -1628,3 +1628,21 @@ function getFalsyValuesCount(arr) {
 
   return arr.filter((item) => !item).length;
 }
+/**
+ * Returns a number of all occurrences of the specified item in an array
+ *
+ * @param {array} arr
+ * @param {any} item
+ * @return {number}
+ *
+ * @example
+ *    [ 0, 0, 1, 1, 1, 2 ], 1 => 3
+ *    [ 1, 2, 3, 4, 5 ], 0 => 0
+ *    [ 'a','b','c','c' ], 'c'=> 2
+ *    [ null, undefined, null ], null => 2
+ *    [ true, 0, 1, 'true' ], true => 1
+ */
+function findAllOccurrences(arr, n) {
+  const res = arr.filter((item) => item === n);
+  return res.length;
+}
