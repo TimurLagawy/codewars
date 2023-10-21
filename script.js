@@ -1604,3 +1604,27 @@ function getItemsSum(arr) {
   //  sum = arr.map(item => item);
   return res;
 }
+/**
+ * Returns the number of all falsy value in the specified array
+ *
+ * @param {array} arr
+ * @return {number}
+ *
+ * @example
+ *  [] => 0
+ *  [ 1, '', 3 ] => 1
+ *  [ -1, 'false', null, 0 ] => 2
+ *  [ null, undefined, NaN, false, 0, '' ]  => 6
+ */
+function getFalsyValuesCount(arr) {
+  /* let res;
+  res = arr.lastIndexOf('');
+  if (arr === '') {
+    res = 0;
+  }
+
+  return res;
+} */
+
+  return arr.filter((item) => !item).length;
+}
