@@ -1840,3 +1840,38 @@ function getElementByIndexes(arr, indexes) {
   }
   return getElementByIndexes(arr[currentIndex], restIndexes);
 }
+/**
+ * Swaps the head and tail of the specified array:
+ * the head (first half) of array move to the end, the tail (last half) move to the start.
+ * The middle element (if exists) leave on the same position.
+ *
+ *
+ * @param {array} arr
+ * @return {array}
+ *
+ * @example
+ *   [ 1, 2, 3, 4, 5 ]   =>  [ 4, 5, 3, 1, 2 ]
+ *    \----/   \----/
+ *     head     tail
+ *
+ *   [ 1, 2 ]  => [ 2, 1 ]
+ *   [ 1, 2, 3, 4, 5, 6, 7, 8 ]   =>  [ 5, 6, 7, 8, 1, 2, 3, 4 ]
+ *
+ */
+function swapHeadAndTail(arr) {
+  let mass = [];
+  let arr1 = [];
+  if (arr.length <= 1) {
+    arr1 = arr;
+  } else if (arr.length % 2 === 0) {
+    mass = arr.splice(0, arr.length / 2);
+
+    arr1 = arr.concat(mass);
+  } else if (arr.length % 2 === 1) {
+    mass = arr.splice(0, arr.length / 2);
+    const elem = arr.splice(0, 1);
+
+    arr1 = arr.concat(elem, mass);
+  }
+  return arr1;
+}
