@@ -1552,9 +1552,38 @@ function getPositivesCount(arr) {
   if (arr.length === 0) {
     num = 0;
   } else {
-    mass = arr.filter((item) => typeof item === 'number' && item > 0);
+    mass = arr.filter((item) => typeof item === "number" && item > 0);
     mass.sort((a, b) => a - b);
     num = mass[mass.length - 1];
   }
   return num;
+}
+/**
+ * Sorts digit names
+ *
+ * @param {array} arr
+ * @return {array}
+ *
+ * @example
+ *   [] => []
+ *   [ 'nine','one' ]                 => [ 'one', 'nine' ]
+ *   [ 'one','two','three' ]          => [ 'one','two', 'three' ]
+ *   [ 'nine','eight','nine','eight'] => [ 'eight','eight','nine','nine']
+ *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
+ */
+function sortDigitNamesByNumericOrder(arr) {
+  const massKey = [
+    "zero",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+  ];
+  arr.sort((a, b) => massKey.indexOf(a) - massKey.indexOf(b));
+  return arr;
 }
