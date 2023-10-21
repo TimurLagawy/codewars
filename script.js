@@ -1737,3 +1737,21 @@ function getIntervalArray(start, end) {
   return Array.from({ length: end - start + 1 }, ($, index) => start + index);
   // $ или _ вариант объявления переменной
 }
+
+/**
+ * Returns array containing only unique values from the specified array.
+ *
+ * @param {array} arr
+ * @return {array}
+ *
+ * @example
+ *   [ 1, 2, 3, 3, 2, 1 ] => [ 1, 2, 3 ]
+ *   [ 'a', 'a', 'a', 'a' ]  => [ 'a' ]
+ *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
+ */
+function distinct(arr) {
+  /* arr.sort();
+  const results = arr.filter((item) => item < 0);
+  return results; */
+  return arr.filter((item, index) => arr.indexOf(item) === index);
+}
