@@ -1660,3 +1660,37 @@ function findAllOccurrences(arr, n) {
 function toStringList(arr) {
   return arr.join(',');
 }
+/**
+ * Sorts the specified array by country name first and city name
+ * (if countries are equal) in ascending order.
+ *
+ * @param {array} arr
+ * @return {array}
+ *
+ * @example
+ *    [
+ *      { country: 'Russia',  city: 'Moscow' },
+ *      { country: 'Belarus', city: 'Minsk' },
+ *      { country: 'Poland',  city: 'Warsaw' },
+ *      { country: 'Russia',  city: 'Saint Petersburg' },
+ *      { country: 'Poland',  city: 'Krakow' },
+ *      { country: 'Belarus', city: 'Brest' }
+ *    ]
+ *                      =>
+ *    [
+ *      { country: 'Belarus', city: 'Brest' },
+ *      { country: 'Belarus', city: 'Minsk' },
+ *      { country: 'Poland',  city: 'Krakow' },
+ *      { country: 'Poland',  city: 'Warsaw' },
+ *      { country: 'Russia',  city: 'Moscow' },
+ *      { country: 'Russia',  city: 'Saint Petersburg' }
+ *    ]
+ */
+function sortCitiesArray(arr) {
+  return arr.sort((a, b) => {
+    if (a.country === b.country) {
+      return a.city.localeCompare(b.city);
+    }
+    return a.country.localeCompare(b.country);
+  });
+}
