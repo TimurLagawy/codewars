@@ -1533,3 +1533,28 @@ function get3TopItems(arr) {
 
   return arr.slice(0, 3);
 }
+/**
+ * Returns the number of positive numbers from specified array
+ *
+ * @param {array} arr
+ * @return {number}
+ *
+ * @example
+ *   [ ]          => 0
+ *   [ -1, 0, 1 ] => 1
+ *   [ 1, 2, 3]   => 3
+ *   [ null, 1, 'elephant' ] => 1
+ *   [ 1, '2' ] => 1
+ */
+function getPositivesCount(arr) {
+  let mass = [];
+  let num = 0;
+  if (arr.length === 0) {
+    num = 0;
+  } else {
+    mass = arr.filter((item) => typeof item === 'number' && item > 0);
+    mass.sort((a, b) => a - b);
+    num = mass[mass.length - 1];
+  }
+  return num;
+}
