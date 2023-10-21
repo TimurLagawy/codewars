@@ -1814,3 +1814,29 @@ function selectMany(arr, childrenSelector) {
   return str.split(','); */
   return arr.flatMap(childrenSelector);
 }
+/**
+ * Returns an element from the multidimensional array by the specified indexes.
+ *
+ * @param {array} arr
+ * @param {array} indexes
+ * @return {any} element from array
+ *
+ * @example
+ *   [[1, 2], [3, 4], [5, 6]], [0,0]  => 1        (arr[0][0])
+ *   ['one','two','three'], [2]       => 'three'  (arr[2])
+ *   [[[ 1, 2, 3]]], [ 0, 0, 1 ]      => 2        (arr[0][0][1])
+ */
+function getElementByIndexes(arr, indexes) {
+  // return arr.indexOf(indexes);
+  // return arr.find((item) => item.index === indexes);
+  if (indexes.length === 0) {
+    return arr;
+  }
+
+  const [currentIndex, ...restIndexes] = indexes;
+
+  if (arr[currentIndex] === undefined) {
+    return undefined;
+  }
+  return getElementByIndexes(arr[currentIndex], restIndexes);
+}
