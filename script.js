@@ -1587,3 +1587,20 @@ function sortDigitNamesByNumericOrder(arr) {
   arr.sort((a, b) => massKey.indexOf(a) - massKey.indexOf(b));
   return arr;
 }
+/**
+ * Returns the sum of all items in the specified array of numbers
+ *
+ * @param {array} arr
+ * @return {number}
+ *
+ * @example
+ *   [] => 0
+ *   [ 1, 2, 3 ]           => 6
+ *   [ -1, 1, -1, 1 ]      => 0
+ *   [ 1, 10, 100, 1000 ]  => 1111
+ */
+function getItemsSum(arr) {
+  const res = arr.reduce((sum, current) => sum + current, 0);
+  //  sum = arr.map(item => item);
+  return res;
+}
