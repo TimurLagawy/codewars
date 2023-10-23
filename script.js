@@ -1909,3 +1909,37 @@ function getFizzBuzz(num) {
   }
   return res;
 }
+function decode(expr) {
+  let res = "";
+
+  for (let i = 0; i < expr.length / 10; i++) {
+    let letter = "";
+    letter += expr[i * 10];
+    letter += expr[i * 10 + 1];
+    letter += expr[i * 10 + 2];
+    letter += expr[i * 10 + 3];
+    letter += expr[i * 10 + 4];
+    letter += expr[i * 10 + 5];
+    letter += expr[i * 10 + 6];
+    letter += expr[i * 10 + 7];
+    letter += expr[i * 10 + 8];
+    letter += expr[i * 10 + 9];
+    if (letter === "**********") {
+      res += " ";
+    } else {
+      let key = "";
+      let a = "";
+      for (let j = 0; j < 5; j++) {
+        if (letter[j * 2] === "0" && letter[j * 2 + 1] === "0") {
+          key += "";
+        } else if (letter[j * 2] === "1" && letter[j * 2 + 1] === "0") {
+          key += ".";
+        } else if (letter[j * 2] === "1" && letter[j * 2 + 1] === "1") {
+          key += "-";
+        }
+      }
+      res += MORSE_TABLE[key];
+    }
+  }
+  return res;
+}
