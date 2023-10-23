@@ -1999,3 +1999,25 @@ function decode(expr) {
   }
   return res;
 }
+/* Create a function strCount (takes an object as argument) that will count all string values inside an object. For example:
+
+strCount({
+  first: "1",
+  second: "2",
+  third: false,
+  fourth: ["anytime",2,3,4],
+  fifth:  null
+  }) "Did not count the correct number of strings. Check counting inside nested objects.");
+   */
+function strCount(obj) {
+  let count = 0;
+  let val = Object.values(obj);
+
+  for (let i = 0; i < val.length; i++) {
+    if (typeof val[i] === "number") {
+      count += 1;
+    } else {
+    }
+  }
+  return count;
+}
