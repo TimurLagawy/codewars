@@ -1266,6 +1266,7 @@ function towelSort(matrix) {
 }
 
 function check(str, bracketsConfig) {
+  /*
   let str1 = str.split("");
   let res1 = str1.filter((item) => item == "[");
   let res2 = str1.filter((item) => item == "]");
@@ -1282,6 +1283,22 @@ function check(str, bracketsConfig) {
   } else {
     return false;
   }
+}*/
+  let brackets = bracketsConfig.map((item) => item.join(""));
+
+  while (true) {
+    let first = str.length;
+
+    for (let bracket of brackets) {
+      str = str.replace(bracket, "");
+    }
+
+    if (str.length === first) {
+      break; // No further reductions can be made
+    }
+  }
+
+  return str.length === 0;
 }
 class GuessingGame {
   constructor() {
