@@ -2197,24 +2197,31 @@ Implement the function which takes an array containing the names of people that 
 ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
 Note: For 4 or more names, the number in "and 2 others" simply increases.
 */
+/* function likes(names) {
+  if(names.length === 0) return "no one likes this";
+  if(names.length === 1) return names[0] + " likes this";
+  if(names.length === 2) return names[0] + " and " + names[1] + " like this";
+  if(names.length === 3) return names[0] + ", " + names[1] + " and " + names[2] + " like this";
+  return names[0] + ", " + names[1] + " and " + (names.length - 2) + " others like this";
+} */
 
 function likes(names) {
-  let str = ' likes this';
-  let res = '';
+  let str = " likes this";
+  let res = "";
 
   if (names.length === 0) {
-    res = 'no one';
+    res = "no one";
   } else if (names.length === 1) {
     res = names[0];
   } else if (names.length === 2) {
-    res = names[0] + ' and ' + names[1];
-    str = ' like this'
+    res = names[0] + " and " + names[1];
+    str = " like this";
   } else if (names.length === 3) {
-    res = names[0] + ', ' + names[1] + ' and ' + names[2];
-    str = ' like this'
+    res = names[0] + ", " + names[1] + " and " + names[2];
+    str = " like this";
   } else if (names.length > 3) {
-    res = names[0] + ', ' + names[1] + ' and ' + (names.length - 2) + ' others';
-    str = ' like this'
+    res = names[0] + ", " + names[1] + " and " + (names.length - 2) + " others";
+    str = " like this";
   }
 
   return res + str;
