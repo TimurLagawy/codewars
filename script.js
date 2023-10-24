@@ -2022,6 +2022,7 @@ function strCount(obj) {
   return count;
 }
 
+// countBits = n => n.toString(2).split('0').join('').length;
 let countBits = function (n) {
   let binaryString = n.toString(2); // Convert to binary string
   let count = 0;
@@ -2032,4 +2033,31 @@ let countBits = function (n) {
       count += 1;
     }
   }
+};
+/* Story
+Due to lack of maintenance the minute-hand has fallen off Town Hall clock face.
+
+And because the local council has lost most of our tax money to an elaborate email scam there are no funds to fix the clock properly.
+
+Instead, they are asking for volunteer programmers to write some code that tell the time by only looking at the remaining hour-hand!
+
+What a bunch of cheapskates!
+
+Can you do it? */
+let whatTimeIsIt = function (angle) {
+  let allMin = angle * 2;
+  let min = Math.floor(allMin % 60);
+  let hours = Math.floor(allMin / 60);
+  let time = "";
+  if (hours == 0) {
+    hours += 12;
+  } else if (hours < 10) {
+    time += 0;
+  }
+  if (min < 10) {
+    time += hours + ":0" + min;
+  } else {
+    time += hours + ":" + min;
+  }
+  return time;
 };
