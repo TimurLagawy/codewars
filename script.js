@@ -2238,39 +2238,99 @@ Examples (input --> output):
 0, 0, 0       --> "000000"
 148, 0, 211   --> "9400D3" */
 function rgb(r, g, b) {
-  let res = '';
-  if ( r < 0) {
+  let res = "";
+  if (r < 0) {
     r = 0;
     res = res + 0 + r.toString(16);
-  } else if (0 <= r && r <= 15){
+  } else if (0 <= r && r <= 15) {
     res = res + 0 + r.toString(16);
-  }  else if ( r > 255) {
+  } else if (r > 255) {
     r = 255;
     res += r.toString(16);
   } else {
     res += r.toString(16);
   }
-   if ( g < 0) {
+  if (g < 0) {
     g = 0;
     res = res + 0 + g.toString(16);
-  } else if (0 <= g && g <= 15){
+  } else if (0 <= g && g <= 15) {
     res = res + 0 + g.toString(16);
-  }  else if ( g > 255) {
+  } else if (g > 255) {
     g = 255;
     res += g.toString(16);
   } else {
     res += g.toString(16);
-  } 
-  if ( b < 0) {
+  }
+  if (b < 0) {
     b = 0;
     res = res + 0 + b.toString(16);
-  } else if (0 <= b && b <= 15){
+  } else if (0 <= b && b <= 15) {
     res = res + 0 + b.toString(16);
-  }else if ( b > 255) {
+  } else if (b > 255) {
     b = 255;
     res += b.toString(16);
   } else {
     res += b.toString(16);
-  }  
-    return res.toUpperCase();
+  }
+  return res.toUpperCase();
+}
+
+/* function getCard() {
+  function generateUniqueRandomNumbers(min, max, count, exclude) {
+    let result = [];
+
+    while (result.length < count) {
+      const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+
+      if (!result.includes(randomNum) && !exclude.includes(randomNum)) {
+        result.push(randomNum);
+      }
+    }
+
+    return result;
+  }
+
+  let mass = [];
+
+  // B column (1 to 15)
+  const bNumbers = generateUniqueRandomNumbers(1, 15, 5, []);
+  mass.push(...bNumbers.map(num => 'B' + num));
+
+  // I column (16 to 30)
+  const iNumbers = generateUniqueRandomNumbers(16, 30, 5, bNumbers);
+  mass.push(...iNumbers.map(num => 'I' + num));
+
+  // N column (31 to 45)
+  const nNumbers = generateUniqueRandomNumbers(31, 45, 4, [...bNumbers, ...iNumbers]);
+  mass.push(...nNumbers.map(num => 'N' + num));
+
+  // G column (46 to 60)
+  const gNumbers = generateUniqueRandomNumbers(46, 60, 5, [...bNumbers, ...iNumbers, ...nNumbers]);
+  mass.push(...gNumbers.map(num => 'G' + num));
+
+  // O column (61 to 75)
+  const oNumbers = generateUniqueRandomNumbers(61, 75, 5, [...bNumbers, ...iNumbers, ...nNumbers, ...gNumbers]);
+  mass.push(...oNumbers.map(num => 'O' + num));
+
+  return mass;
+} */
+function getCard() {
+  let mass = [];
+  let rand;
+  for (let i = 0; i < 5; i++) {
+    mass.push("B" + (Math.floor(Math.random() * 15) + 1));
+  }
+  for (let i = 0; i < 5; i++) {
+    mass.push("I" + (Math.floor(Math.random() * 15) + 16));
+  }
+  for (let i = 0; i < 4; i++) {
+    mass.push("N" + (Math.floor(Math.random() * 15) + 31));
+  }
+  for (let i = 0; i < 5; i++) {
+    mass.push("G" + (Math.floor(Math.random() * 15) + 46));
+  }
+  for (let i = 0; i < 5; i++) {
+    mass.push("O" + (Math.floor(Math.random() * 15) + 61));
+  }
+  return mass;
 }
