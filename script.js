@@ -2117,17 +2117,16 @@ function bingo(ticket, win) {
   let miniWins = 0;
 
   for (let i = 0; i < ticket.length; i++) {
-    const [str, num] = ticket[i];
+    let elem = ticket[i];
 
-    // Check if any character code in the string matches the number
-    for (let j = 0; j < str.length; j++) {
-      if (str.charCodeAt(j) === num) {
+    // разделил массив билета на подмассивы и сравнил значение каждой буквы с числом, если ==, то +победа
+    for (let j = 0; j < elem[0].length; j++) {
+      if (elem[0].charCodeAt(j) === elem[1]) {
         miniWins += 1;
         break; // Break once a mini win is found in the current subarray
       }
     }
   }
-
   // Compare the total mini wins to the win threshold
   return miniWins >= win ? "Winner!" : "Loser!";
 }
