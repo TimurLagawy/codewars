@@ -2074,7 +2074,7 @@ Example
 is_prime(1)  /* false 
 is_prime(2)  /* true  
 is_prime(-1)  false */
-function isPrime(num) {
+/* function isPrime(num) {
   res = true;
   if (num < 2) {
     res = false;
@@ -2086,4 +2086,17 @@ function isPrime(num) {
     }
   }
   return res;
+} */ 
+function isPrime(num) {
+  res = true; 
+  if (num < 2) {
+    res = false;
+  }else {
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      res = false;
+    }
+  }
+     
+  }return res; 
 }
