@@ -2022,16 +2022,14 @@ function strCount(obj) {
   return count;
 }
 
-var countBits = function(n) {
+let countBits = function (n) {
   let binaryString = n.toString(2); // Convert to binary string
   let count = 0;
 
   for (let i = 0; i < binaryString.length; i++) {
     // Check the least significant bit using bitwise AND
-    if (binaryString[i] & 1) {
+    if (binaryString[i] == 1) {
       count += 1;
     }
   }
-
-  return count;
 };
