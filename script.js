@@ -2226,3 +2226,51 @@ function likes(names) {
 
   return res + str;
 }
+
+/* DESCRIPTION:
+The rgb function is incomplete. Complete it so that passing in RGB decimal values will result in a hexadecimal representation being returned. Valid decimal values for RGB are 0 - 255. Any values that fall out of that range must be rounded to the closest valid value.
+
+Note: Your answer should always be 6 characters long, the shorthand with 3 will not work here.
+
+Examples (input --> output):
+255, 255, 255 --> "FFFFFF"
+255, 255, 300 --> "FFFFFF"
+0, 0, 0       --> "000000"
+148, 0, 211   --> "9400D3" */
+function rgb(r, g, b) {
+  let res = '';
+  if ( r < 0) {
+    r = 0;
+    res = res + 0 + r.toString(16);
+  } else if (0 <= r && r <= 15){
+    res = res + 0 + r.toString(16);
+  }  else if ( r > 255) {
+    r = 255;
+    res += r.toString(16);
+  } else {
+    res += r.toString(16);
+  }
+   if ( g < 0) {
+    g = 0;
+    res = res + 0 + g.toString(16);
+  } else if (0 <= g && g <= 15){
+    res = res + 0 + g.toString(16);
+  }  else if ( g > 255) {
+    g = 255;
+    res += g.toString(16);
+  } else {
+    res += g.toString(16);
+  } 
+  if ( b < 0) {
+    b = 0;
+    res = res + 0 + b.toString(16);
+  } else if (0 <= b && b <= 15){
+    res = res + 0 + b.toString(16);
+  }else if ( b > 255) {
+    b = 255;
+    res += b.toString(16);
+  } else {
+    res += b.toString(16);
+  }  
+    return res.toUpperCase();
+}
