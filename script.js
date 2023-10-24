@@ -2139,7 +2139,7 @@ Examples:
 "String" => "StRiNg"
 "Weird string case" => "WeIrD StRiNg CaSe" */
 
-function modifyString(str) {
+/*function modifyString(str) {
   let arr = str.split(" ");
 
   for (let i = 0; i < arr.length; i++) {
@@ -2155,7 +2155,38 @@ function modifyString(str) {
     arr[i] = wordArray.join("");
   }
   return arr.join(" ");
+}*/
+function toWeirdCase(str) {
+  let res ='';
+  if (str.includes(' ')){
+    let arr = str.split(" ");
+
+  for (let i = 0; i < arr.length; i++) {
+    let wordArray = arr[i].split("");
+
+    for (let j = 0; j < wordArray.length; j++) {
+      if (j % 2 === 0) {
+        wordArray[j] = wordArray[j].toUpperCase();
+      } else {
+        wordArray[j] = wordArray[j].toLowerCase();
+      }
+    }
+    arr[i] = wordArray.join("");
+  }
+  res = arr.join(" ")
+    
+  }else{
+    for (let j = 0; j < str.length; j++) {
+      if (j % 2 === 0) {
+        res += str[j].toUpperCase();
+      } else {
+        res += str[j].toLowerCase();
+      }
+    }
+  }
+  return res;
 }
+
 
 
 
