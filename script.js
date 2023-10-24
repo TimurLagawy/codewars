@@ -2157,25 +2157,24 @@ Examples:
   return arr.join(" ");
 }*/
 function toWeirdCase(str) {
-  let res ='';
-  if (str.includes(' ')){
+  let res = "";
+  if (str.includes(" ")) {
     let arr = str.split(" ");
 
-  for (let i = 0; i < arr.length; i++) {
-    let wordArray = arr[i].split("");
+    for (let i = 0; i < arr.length; i++) {
+      let wordArray = arr[i].split("");
 
-    for (let j = 0; j < wordArray.length; j++) {
-      if (j % 2 === 0) {
-        wordArray[j] = wordArray[j].toUpperCase();
-      } else {
-        wordArray[j] = wordArray[j].toLowerCase();
+      for (let j = 0; j < wordArray.length; j++) {
+        if (j % 2 === 0) {
+          wordArray[j] = wordArray[j].toUpperCase();
+        } else {
+          wordArray[j] = wordArray[j].toLowerCase();
+        }
       }
+      arr[i] = wordArray.join("");
     }
-    arr[i] = wordArray.join("");
-  }
-  res = arr.join(" ")
-    
-  }else{
+    res = arr.join(" ");
+  } else {
     for (let j = 0; j < str.length; j++) {
       if (j % 2 === 0) {
         res += str[j].toUpperCase();
@@ -2187,7 +2186,32 @@ function toWeirdCase(str) {
   return res;
 }
 
+/* You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
 
+Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:
 
+[]                                -->  "no one likes this"
+["Peter"]                         -->  "Peter likes this"
+["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
+["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
+["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
+Note: For 4 or more names, the number in "and 2 others" simply increases.
+*/
 
+function likes(names) {
+  let str = " likes this";
+  let res = "";
 
+  if (names.length === 0) {
+    res = "no one";
+  } else if (names.length === 1) {
+    res = names[0];
+  } else if (names.length === 2) {
+    res = names[0] + " and " + names[1];
+  } else if (names.length === 3) {
+    res = names[0] + ", " + names[1] + " and " + names[2];
+  } else if (names.length > 3) {
+    res = names[0] + ", " + names[1] + " and " + (names.length - 2) + " others";
+  }
+  return res + str;
+}
