@@ -2434,7 +2434,9 @@ Examples:
 vowelOne( "abceios" ) // "1001110"
 
 vowelOne( "aeiou, abc" ) // "1111100100"
- */
+ */ /* function vowelOne(s){
+  return s.split('').map(x => ('aeiouAEIOU'.includes(x)) ? 1 : 0).join('');
+} */
 function vowelOne(s) {
   let vov = "aeiou";
   let res = "";
