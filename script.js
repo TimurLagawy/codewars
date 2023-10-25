@@ -2332,7 +2332,6 @@ function rgb(r, g, b) {
 } */
 function getCard() {
   let mass = [];
-  let rand;
   for (let i = 0; i < 5; i++) {
     mass.push("B" + (Math.floor(Math.random() * 15) + 1));
   }
@@ -2349,4 +2348,40 @@ function getCard() {
     mass.push("O" + (Math.floor(Math.random() * 15) + 61));
   }
   return mass;
+}
+/* A stream of data is received and needs to be reversed.
+
+Each segment is 8 bits long, meaning the order of these segments needs to be reversed, for example:
+
+11111111  00000000  00001111  10101010
+ (byte1)   (byte2)   (byte3)   (byte4)
+should become:
+
+10101010  00001111  00000000  11111111
+ (byte4)   (byte3)   (byte2)   (byte1)
+The total number of bits will always be a multiple of 8.
+
+The data is given in an array as such:
+
+[1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1 */
+/* let data = [
+  1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0,
+  1, 0, 1, 0, 1, 0,
+]; */
+let n = 1;
+function dataReverse(data) {
+  let mass = [];
+  let n = 1;
+  for (let i = data.length / 8; i > 0; i--) {
+    mass.push(data.slice([data.length - 8 * n], [data.length - 8 * n + 8]));
+    n++;
+  }
+  let str = mass.join("").split("");
+  let mass1 = [];
+  for (let j = 0; j < str.length; j++) {
+    if (str[j] == "0" || str[j] == "1") {
+      mass1.push(Number(str[j]));
+    }
+  }
+  return mass1;
 }
