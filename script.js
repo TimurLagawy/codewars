@@ -2364,10 +2364,16 @@ The total number of bits will always be a multiple of 8.
 The data is given in an array as such:
 
 [1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1 */
-/* let data = [
-  1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0,
-  1, 0, 1, 0, 1, 0,
-]; */
+/* const dataReverse = data => {
+
+	const result = [];
+
+	while(data.length){
+		result.push(...data.splice(-8))
+	}
+
+	return result;
+} */
 let n = 1;
 function dataReverse(data) {
   let mass = [];
