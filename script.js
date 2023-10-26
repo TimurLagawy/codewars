@@ -2705,6 +2705,18 @@ function maxTriSum(numbers) {
   console.log(res);
   return res;
 }
+/* DESCRIPTION:
+Write a function that returns only the decimal part of the given number.
+
+You only have to handle valid numbers, not Infinity, NaN, or similar. Always return a positive decimal part.
+
+Examples
+getDecimal(2.4)  === 0.4
+getDecimal(-0.2) === 0.2 */
+function getDecimal(n) {
+  return Math.abs(n % 1);
+}
+
 /*et ob1 = { algebra: 6, history: 7, physics: 8, geography: 9, chemistry: 10 };
 let ob2 = { algebra: 8, history: 7, physics: 8, geography: 9, chemistry: 10 };
 let ob3 = { algebra: 6, history: 5, physics: 5, geography: 9, chemistry: 10 };
