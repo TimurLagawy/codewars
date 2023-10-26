@@ -2502,7 +2502,13 @@ List = [
        ]
 
 Output:
-'Vatsan took his dog for a spin' */
+'Vatsan took his dog for a spin'
+
+const sentence = list =>
+  list
+    .sort((a, b) => Object.keys(a)[0] - Object.keys(b)[0])
+    .map(item => Object.values(item)[0])
+    .join(' '); */
 function sentence(List) {
   let res = [];
   for (let i = -999; i < 999; i++) {
