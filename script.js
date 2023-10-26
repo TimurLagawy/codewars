@@ -2508,7 +2508,13 @@ const sentence = list =>
   list
     .sort((a, b) => Object.keys(a)[0] - Object.keys(b)[0])
     .map(item => Object.values(item)[0])
-    .join(' '); */
+    .join(' '); 
+    
+    function sentence(List) {
+   return List
+     .sort((a, b) => Object.keys(a) - Object.keys(b))
+     .map((item) => Object.values(item))
+     .join(' ') */
 function sentence(List) {
   let res = [];
   for (let i = -999; i < 999; i++) {
