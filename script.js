@@ -2684,7 +2684,11 @@ Note : duplications are not included when summing , (i.e) the numbers added only
 Explanation:
 As the triplet that maximize the sum {12 , 29 , 0} in order , their sum is (41) ,
 
-Note : duplications are not included when summing , (i.e) the numbers added only once . */
+Note : duplications are not included when summing , (i.e) the numbers added only once .
+const maxTriSum = numbers => {
+  const [a,b,c,...rest] = [...new Set([...numbers])].sort((a,b)=>b-a)
+  return a+b+c
+} */
 function maxTriSum(numbers) {
   let mass1 = numbers.sort((a, b) => b - a);
   let count = 0;
