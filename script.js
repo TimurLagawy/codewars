@@ -2871,3 +2871,32 @@ function whoseBicycle(obj1, obj2, obj3) {
     return "I need to buy a bicycle for my third son.";
   }
 }
+
+/* Create a function strCount (takes an object as argument) that will count all string values inside an object. For example:
+
+strCount({
+  first: "1",
+  second: "2",
+  third: false,
+  fourth: ["anytime",2,3,4],
+  fifth:  null
+  })
+  //returns 3
+*/
+function strCount(obj) {
+  let count = 0;
+
+  for (let key in obj) {
+    if (typeof obj[key] === "string") {
+      count++;
+    } else if (Array.isArray(obj[key])) {
+      // Use recursion for arrays
+      count += strCount(obj[key]);
+    } else if (typeof obj[key] === "object" && obj[key] !== null) {
+      // Use recursion for nested objects
+      count += strCount(obj[key]);
+    }
+  }
+
+  return count;
+}
