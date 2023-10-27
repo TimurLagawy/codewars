@@ -2793,7 +2793,21 @@ An example:
 const objA = { a: 10, b: 20, c: 30 }
 const objB = { a: 3, c: 6, d: 3 }
 combine(objA, objB) // Returns { a: 13, b: 20, c: 36, d: 3 }
-The combine function should be a good citizen, so should not mutate the input objects. */
+The combine function should be a good citizen, so should not mutate the input objects.
+
+function combine() {
+    let result = {};
+    for (let obj of arguments) {
+        for (let property in obj) {
+            if (property in result) {
+                result[property] += obj[property];
+            } else {
+                result[property] = obj[property];
+            }
+        }
+    }
+    return result;
+} */
 function combine(...objects) {
   return objects.reduce((result, obj) => {
     for (let key in obj) {
