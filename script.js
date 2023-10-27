@@ -2843,7 +2843,13 @@ const ageTable = {
                   'firstSonAge': 14,
                   'secondSonAge': 9,
                   'thirdSonAge': 8
-                } */
+                } 
+                
+function whoseBicycle(a, b, c) {
+  [a, b, c] = [a, b, c].map(x => Object.values(x).reduce((y, z) => y + z, 0));
+  let n = Math.max(a, b, c);
+  return `I need to buy a bicycle for my ${n === c ? "third" : n === b ? "second" : "first"} son.`;
+} */
 function whoseBicycle(obj1, obj2, obj3) {
   let res1 = 0;
   let res2 = 0;
