@@ -2941,6 +2941,7 @@ Additional Notes:
 The maximum input value can always be encoded in a number without loss of precision in JavaScript. In Haskell, intermediate results will probably be too large for Int.
 The function must work for any arbitrary alphabets, not only the pre-defined ones
 You don't have to consider negative numbers */
+
 function convert(input, sourceAlphabet, targetAlphabet) {
   // Convert input from source to decimal
   const decimalValue = input
@@ -2962,4 +2963,31 @@ function convert(input, sourceAlphabet, targetAlphabet) {
   } while (quotient > 0);
 
   return result;
+}
+
+/**
+ * Creates an identity matrix of the specified size
+ *
+ * @param {number} n
+ * @return {array}
+ *
+ * @example
+ *     1  => [[1]]
+ *
+ *     2 => [[1,0],
+ *           [0,1]]
+ *
+ *          [[1,0,0,0,0],
+ *           [0,1,0,0,0],
+ *     5 =>  [0,0,1,0,0],
+ *           [0,0,0,1,0],
+ *           [0,0,0,0,1]]
+ */
+function getIdentityMatrix(n) {
+  const arr = [];
+  arr.length = n;
+  const mass = Array.from({ length: n }, () => arr.fill(0));
+  return mass.map((e, i) => e.map((el, ind) => (i !== ind ? el : 1)));
+  // return Array.from({ length: n }, ($, i)
+  // => Array.from({ length: n }, (_, j) => (i === j ? 1 : 0)));
 }
