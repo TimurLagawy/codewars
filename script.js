@@ -3069,3 +3069,71 @@ function getDigitalRoot(num) {
   }
   return res1;
 }
+
+/**
+ * Returns the evaluation of the specified tic-tac-toe position.
+ * See the details: https://en.wikipedia.org/wiki/Tic-tac-toe
+ *
+ * Position is provides as 3x3 array with the following values: 'X','0', undefined
+ * Function should return who is winner in the current position according to the game rules.
+ * The result can be: 'X','0',undefined
+ *
+ * @param {array} position
+ * @return {string}
+ *
+ * @example
+ *
+ *   [[ 'X',   ,'0' ],
+ *    [    ,'X','0' ],       =>  'X'
+ *    [    ,   ,'X' ]]
+ *
+ *   [[ '0','0','0' ],
+ *    [    ,'X',    ],       =>  '0'
+ *    [ 'X',   ,'X' ]]
+ *
+ *   [[ '0','X','0' ],
+ *    [    ,'X',    ],       =>  undefined
+ *    [ 'X','0','X' ]]
+ *
+ *   [[    ,   ,    ],
+ *    [    ,   ,    ],       =>  undefined
+ *    [    ,   ,    ]]
+ *
+ */
+function evaluateTicTacToePosition(p) {
+  let res;
+  if (p[0][0] === 'X' && p[0][1] === 'X' && p[0][2] === 'X') {
+    res = 'X';
+  } else if (p[1][0] === 'X' && p[1][1] === 'X' && p[1][2] === 'X') {
+    res = 'X';
+  } else if (p[2][0] === 'X' && p[2][1] === 'X' && p[2][2] === 'X') {
+    res = 'X';
+  } else if (p[0][0] === 'X' && p[1][0] === 'X' && p[2][0] === 'X') {
+    res = 'X';
+  } else if (p[0][1] === 'X' && p[1][1] === 'X' && p[2][1] === 'X') {
+    res = 'X';
+  } else if (p[0][2] === 'X' && p[1][2] === 'X' && p[2][2] === 'X') {
+    res = 'X';
+  } else if (p[0][0] === 'X' && p[1][1] === 'X' && p[2][2] === 'X') {
+    res = 'X';
+  } else if (p[2][0] === 'X' && p[1][1] === 'X' && p[0][2] === 'X') {
+    res = 'X';
+  } else if (p[0][0] === '0' && p[0][1] === '0' && p[0][2] === '0') {
+    res = '0';
+  } else if (p[1][0] === '0' && p[1][1] === '0' && p[1][2] === '0') {
+    res = '0';
+  } else if (p[2][0] === '0' && p[2][1] === '0' && p[2][2] === '0') {
+    res = '0';
+  } else if (p[0][0] === '0' && p[1][0] === '0' && p[2][0] === '0') {
+    res = '0';
+  } else if (p[0][1] === '0' && p[1][1] === '0' && p[2][1] === '0') {
+    res = '0';
+  } else if (p[0][2] === '0' && p[1][2] === '0' && p[2][2] === '0') {
+    res = '0';
+  } else if (p[0][0] === '0' && p[1][1] === '0' && p[2][2] === '0') {
+    res = '0';
+  } else if (p[2][0] === '0' && p[1][1] === '0' && p[0][2] === '0') {
+    res = '0';
+  }
+  return res;
+}
