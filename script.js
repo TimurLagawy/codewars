@@ -3102,38 +3102,68 @@ function getDigitalRoot(num) {
  */
 function evaluateTicTacToePosition(p) {
   let res;
-  if (p[0][0] === 'X' && p[0][1] === 'X' && p[0][2] === 'X') {
-    res = 'X';
-  } else if (p[1][0] === 'X' && p[1][1] === 'X' && p[1][2] === 'X') {
-    res = 'X';
-  } else if (p[2][0] === 'X' && p[2][1] === 'X' && p[2][2] === 'X') {
-    res = 'X';
-  } else if (p[0][0] === 'X' && p[1][0] === 'X' && p[2][0] === 'X') {
-    res = 'X';
-  } else if (p[0][1] === 'X' && p[1][1] === 'X' && p[2][1] === 'X') {
-    res = 'X';
-  } else if (p[0][2] === 'X' && p[1][2] === 'X' && p[2][2] === 'X') {
-    res = 'X';
-  } else if (p[0][0] === 'X' && p[1][1] === 'X' && p[2][2] === 'X') {
-    res = 'X';
-  } else if (p[2][0] === 'X' && p[1][1] === 'X' && p[0][2] === 'X') {
-    res = 'X';
-  } else if (p[0][0] === '0' && p[0][1] === '0' && p[0][2] === '0') {
-    res = '0';
-  } else if (p[1][0] === '0' && p[1][1] === '0' && p[1][2] === '0') {
-    res = '0';
-  } else if (p[2][0] === '0' && p[2][1] === '0' && p[2][2] === '0') {
-    res = '0';
-  } else if (p[0][0] === '0' && p[1][0] === '0' && p[2][0] === '0') {
-    res = '0';
-  } else if (p[0][1] === '0' && p[1][1] === '0' && p[2][1] === '0') {
-    res = '0';
-  } else if (p[0][2] === '0' && p[1][2] === '0' && p[2][2] === '0') {
-    res = '0';
-  } else if (p[0][0] === '0' && p[1][1] === '0' && p[2][2] === '0') {
-    res = '0';
-  } else if (p[2][0] === '0' && p[1][1] === '0' && p[0][2] === '0') {
-    res = '0';
+  if (p[0][0] === "X" && p[0][1] === "X" && p[0][2] === "X") {
+    res = "X";
+  } else if (p[1][0] === "X" && p[1][1] === "X" && p[1][2] === "X") {
+    res = "X";
+  } else if (p[2][0] === "X" && p[2][1] === "X" && p[2][2] === "X") {
+    res = "X";
+  } else if (p[0][0] === "X" && p[1][0] === "X" && p[2][0] === "X") {
+    res = "X";
+  } else if (p[0][1] === "X" && p[1][1] === "X" && p[2][1] === "X") {
+    res = "X";
+  } else if (p[0][2] === "X" && p[1][2] === "X" && p[2][2] === "X") {
+    res = "X";
+  } else if (p[0][0] === "X" && p[1][1] === "X" && p[2][2] === "X") {
+    res = "X";
+  } else if (p[2][0] === "X" && p[1][1] === "X" && p[0][2] === "X") {
+    res = "X";
+  } else if (p[0][0] === "0" && p[0][1] === "0" && p[0][2] === "0") {
+    res = "0";
+  } else if (p[1][0] === "0" && p[1][1] === "0" && p[1][2] === "0") {
+    res = "0";
+  } else if (p[2][0] === "0" && p[2][1] === "0" && p[2][2] === "0") {
+    res = "0";
+  } else if (p[0][0] === "0" && p[1][0] === "0" && p[2][0] === "0") {
+    res = "0";
+  } else if (p[0][1] === "0" && p[1][1] === "0" && p[2][1] === "0") {
+    res = "0";
+  } else if (p[0][2] === "0" && p[1][2] === "0" && p[2][2] === "0") {
+    res = "0";
+  } else if (p[0][0] === "0" && p[1][1] === "0" && p[2][2] === "0") {
+    res = "0";
+  } else if (p[2][0] === "0" && p[1][1] === "0" && p[0][2] === "0") {
+    res = "0";
   }
   return res;
+}
+
+/**
+ * Returns the common directory path for specified array of full filenames.
+ *
+ * @param {array} pathes
+ * @return {string}
+ *
+ * @example:
+ *   ['/web/images/image1.png', '/web/images/image2.png']  => '/web/images/'
+ *   ['/web/assets/style.css', '/web/scripts/app.js',  'home/setting.conf'] => ''
+ *   ['/web/assets/style.css', '/.bin/mocha',  '/read.me'] => '/'
+ *   ['/web/favicon.ico', '/web-scripts/dump', '/verbalizer/logs'] => '/'
+ */
+function getCommonDirectoryPath(pathes) {
+  const parts = pathes.map((path) => path.split("/"));
+
+  let resStr = "";
+  for (let i = 0; i < parts[0].length; i += 1) {
+    const part = parts[0][i];
+    if (parts.every((pathParts) => pathParts[i] === part)) {
+      resStr += part;
+      if (i < parts[0].length - 1) {
+        resStr += "/";
+      }
+    } else {
+      break;
+    }
+  }
+  return resStr;
 }
