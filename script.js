@@ -3167,3 +3167,34 @@ function getCommonDirectoryPath(pathes) {
   }
   return resStr;
 }
+
+/**
+ * Returns true, if point lies inside the circle, otherwise false.
+ * Circle is an object of
+ *  {
+ *     center: {
+ *       x: 5,
+ *       y: 5
+ *     },
+ *     radius: 20
+ *  }
+ *
+ * Point is object of
+ *  {
+ *     x: 5,
+ *     y: 5
+ *  }
+ *
+ * @param {object} circle
+ * @param {object} point
+ * @return {bool}
+ *
+ * @example:
+ *   { center: { x:0, y:0 }, radius:10 },  { x:0, y:0 }     => true
+ *   { center: { x:0, y:0 }, radius:10 },  { x:10, y:10 }   => false
+ *
+ */
+function isInsideCircle(c, p) {
+  const line1 = Math.sqrt((c.center.x - p.x) ** 2 + (c.center.y - p.y) ** 2);
+  return c.radius > line1;
+}
