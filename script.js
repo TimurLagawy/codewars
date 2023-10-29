@@ -3198,3 +3198,28 @@ function isInsideCircle(c, p) {
   const line1 = Math.sqrt((c.center.x - p.x) ** 2 + (c.center.y - p.y) ** 2);
   return c.radius > line1;
 }
+
+/**
+ * Returns the first non repeated char in the specified strings otherwise returns null.
+ *
+ * @param {string} str
+ * @return {string}
+ *
+ * @example:
+ *   'The quick brown fox jumps over the lazy dog' => 'T'
+ *   'abracadabra'  => 'c'
+ *   'entente' => null
+ */
+function findFirstSingleChar(str) {
+  const arr = str.split('');
+  let simbol;
+  for (let i = 0; i < str.length; i += 1) {
+    if (arr.filter((item) => item === str[i]).length === 1) {
+      simbol = str[i];
+      break;
+    } else {
+      simbol = null;
+    }
+  }
+  return simbol;
+}
