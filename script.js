@@ -3211,7 +3211,7 @@ function isInsideCircle(c, p) {
  *   'entente' => null
  */
 function findFirstSingleChar(str) {
-  const arr = str.split('');
+  const arr = str.split("");
   let simbol;
   for (let i = 0; i < str.length; i += 1) {
     if (arr.filter((item) => item === str[i]).length === 1) {
@@ -3222,4 +3222,40 @@ function findFirstSingleChar(str) {
     }
   }
   return simbol;
+}
+
+/**
+ * Returns the product of two specified matrixes.
+ * See details: https://en.wikipedia.org/wiki/Matrix_multiplication
+ *
+ * @param {array} m1
+ * @param {array} m2
+ * @return {array}
+ *
+ * @example:
+ *   [[ 1, 0, 0 ],       [[ 1, 2, 3 ],           [[ 1, 2, 3 ],
+ *    [ 0, 1, 0 ],   X    [ 4, 5, 6 ],     =>     [ 4, 5, 6 ],
+ *    [ 0, 0, 1 ]]        [ 7, 8, 9 ]]            [ 7, 8, 9 ]]
+ *
+ *                        [[ 4 ],
+ *   [[ 1, 2, 3]]    X     [ 5 ],          =>     [[ 32 ]]
+ *                         [ 6 ]]
+ *
+ */
+function getMatrixProduct(m1, m2) {
+  const res = [];
+
+  for (let i = 0; i < m1.length; i += 1) {
+    res[i] = [];
+
+    for (let j = 0; j < m2[0].length; j += 1) {
+      res[i][j] = 0;
+
+      for (let k = 0; k < m1[0].length; k += 1) {
+        res[i][j] += m1[i][k] * m2[k][j];
+      }
+    }
+  }
+
+  return res;
 }
