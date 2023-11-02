@@ -3242,6 +3242,7 @@ function findFirstSingleChar(str) {
  *                         [ 6 ]]
  *
  */
+ 
 function getMatrixProduct(m1, m2) {
   const res = [];
 
