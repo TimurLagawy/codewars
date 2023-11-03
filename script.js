@@ -3268,7 +3268,11 @@ Translations and comments (and upvotes) welcome!
 Example
 var fives = factory(5);       // returns a function - fives
 var myArray = [1, 2, 3];
-fives(myArray);               //returns [5, 10, 15]; */
+fives(myArray);               //returns [5, 10, 15];
+
+function factory(x){
+    return array => array.map( a => a*x );
+} */
 function factory(x){
   return function arr(myArray) {
     
