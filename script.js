@@ -3242,7 +3242,7 @@ function findFirstSingleChar(str) {
  *                         [ 6 ]]
  *
  */
- 
+
 function getMatrixProduct(m1, m2) {
   const res = [];
 
@@ -3259,4 +3259,22 @@ function getMatrixProduct(m1, m2) {
   }
 
   return res;
+}
+
+/* In the example below, 5 is the number passed into the first function. So it returns a function that takes an array and multiplies all elements in it by five.
+
+Translations and comments (and upvotes) welcome!
+
+Example
+var fives = factory(5);       // returns a function - fives
+var myArray = [1, 2, 3];
+fives(myArray);               //returns [5, 10, 15]; */
+function factory(x){
+  return function arr(myArray) {
+    
+  for (let i = 0; i < myArray.length; i++) {
+   myArray[i] = myArray[i] * x;
+  }  
+    return myArray;
+  }  
 }
