@@ -3307,6 +3307,19 @@ function squaresNeeded(grains){
   }  
 }
 
+function squaresNeeded(grains) {
+    if (grains == 1) return 1;
+
+    var count = 0;
+
+    !(grains % 2) ? "" : grains -= 1;
+
+    for (var i = grains; i >= 1; i = i / 2) {
+        count = count + 1;
+    }
+
+    return count;
+}
 */
 
 function squaresNeeded(n) {
