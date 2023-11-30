@@ -403,9 +403,8 @@ function toExponential(number, fractionDigits) {
  * 12.345, 1   => '12.3'
  */
 function toFixed(number, fractionDigits) {
-  const dig = 10 ** fractionDigits;
-  const res = Math.round(number * dig);
-  return res / dig;
+  // return Math.round(number * 10 ** fractionDigits) / 10 ** fractionDigits;
+  return number.toFixed(fractionDigits);
 }
 
 /**
@@ -420,8 +419,8 @@ function toFixed(number, fractionDigits) {
  * 12345, 7    => '12345.00'
  * 12.345, 4   => '12.35'
  */
-function toPrecision(/* number, precision */) {
-  throw new Error('Not implemented');
+function toPrecision(number, precision) {
+  return number.toPrecision(precision);
 }
 
 /**
