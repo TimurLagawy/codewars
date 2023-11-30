@@ -131,7 +131,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  */
 function getLastDigit(value) {
   let res;
-  if (typeof value === 'number') {
+  if (typeof value === "number") {
     res = value % 10;
   } else {
     res = false;
@@ -433,8 +433,8 @@ function toPrecision(number, precision) {
  * new Number(5) => 5
  * Number(-5)    => -5
  */
-function getNumberValue(/* number */) {
-  throw new Error('Not implemented');
+function getNumberValue(number) {
+  return Number(number);
 }
 
 /**
@@ -453,11 +453,20 @@ function getNumberValue(/* number */) {
  * '5'      => false
  */
 function isNumber(number) {
-  let res = false;
+  /* let res = false;
   if (typeof number === 'number' && number !== Infinity) {
     res = true;
   }
-  return res;
+  return res; */
+
+  // eslint-disable-next-line no-restricted-globals
+  return typeof number === "number" && isFinite(number);
+  /* return (
+    !isNaN(+number) &&
+    typeof value !== 'boolean' &&
+    number !== null &&
+    number !== ''
+  ); */
 }
 
 /**
@@ -473,7 +482,7 @@ function isNumber(number) {
  */
 function isInteger(number) {
   let res = false;
-  if (typeof number === 'number' && number % 1 === 0) {
+  if (typeof number === "number" && number % 1 === 0) {
     res = true;
   }
   return res;
@@ -489,8 +498,33 @@ function isInteger(number) {
  * '4.567abcdefgh' => 4.567
  * 'abcdefgh'      => NaN
  */
-function getFloatOnString(/* str */) {
-  throw new Error('Not implemented');
+function getFloatOnString(str) {
+  /* const number = Number(str);
+  let res = NaN;
+  if (typeof number === 'number') {
+    res = number;
+  }
+  return res; */
+  let str1 = "";
+  for (let i = 0; i < str.length; i += 1) {
+    if (
+      str[i] !== "a" &&
+      str[i] !== "b" &&
+      str[i] !== "c" &&
+      str[i] !== "d" &&
+      str[i] !== "e" &&
+      str[i] !== "f" &&
+      str[i] !== "g" &&
+      str[i] !== "h"
+    ) {
+      str1 += str[i];
+    }
+  }
+  let res = NaN;
+  if (typeof Number(str1) === "number") {
+    res = +str1;
+  }
+  return res;
 }
 
 /**
@@ -508,7 +542,7 @@ function getFloatOnString(/* str */) {
  * '10', 8              => 8
  */
 function getIntegerOnString(/* str, base */) {
-  throw new Error('Not implemented');
+  throw new Error("Not implemented");
 }
 
 /**
