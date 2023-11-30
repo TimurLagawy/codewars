@@ -131,7 +131,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  */
 function getLastDigit(value) {
   let res;
-  if (typeof value === "number") {
+  if (typeof value === 'number') {
     res = value % 10;
   } else {
     res = false;
@@ -402,8 +402,10 @@ function toExponential(number, fractionDigits) {
  * 12345, 2    => '12345.00'
  * 12.345, 1   => '12.3'
  */
-function toFixed(/* number, fractionDigits */) {
-  throw new Error("Not implemented");
+function toFixed(number, fractionDigits) {
+  const dig = 10 ** fractionDigits;
+  const res = Math.round(number * dig);
+  return res / dig;
 }
 
 /**
@@ -419,7 +421,7 @@ function toFixed(/* number, fractionDigits */) {
  * 12.345, 4   => '12.35'
  */
 function toPrecision(/* number, precision */) {
-  throw new Error("Not implemented");
+  throw new Error('Not implemented');
 }
 
 /**
@@ -433,7 +435,7 @@ function toPrecision(/* number, precision */) {
  * Number(-5)    => -5
  */
 function getNumberValue(/* number */) {
-  throw new Error("Not implemented");
+  throw new Error('Not implemented');
 }
 
 /**
@@ -453,7 +455,7 @@ function getNumberValue(/* number */) {
  */
 function isNumber(number) {
   let res = false;
-  if (typeof number === "number" && number !== Infinity) {
+  if (typeof number === 'number' && number !== Infinity) {
     res = true;
   }
   return res;
@@ -472,7 +474,7 @@ function isNumber(number) {
  */
 function isInteger(number) {
   let res = false;
-  if (typeof number === "number" && number % 1 === 0) {
+  if (typeof number === 'number' && number % 1 === 0) {
     res = true;
   }
   return res;
@@ -489,7 +491,7 @@ function isInteger(number) {
  * 'abcdefgh'      => NaN
  */
 function getFloatOnString(/* str */) {
-  throw new Error("Not implemented");
+  throw new Error('Not implemented');
 }
 
 /**
@@ -507,7 +509,7 @@ function getFloatOnString(/* str */) {
  * '10', 8              => 8
  */
 function getIntegerOnString(/* str, base */) {
-  throw new Error("Not implemented");
+  throw new Error('Not implemented');
 }
 
 /**
