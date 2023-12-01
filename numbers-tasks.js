@@ -573,6 +573,7 @@ function isSafeInteger(number) {
  * @example:
  * 5.9  => 5
  * -5.1 => -6
+ *
  */
 function roundToSmallestInteger(number) {
   return Math.floor(number);
