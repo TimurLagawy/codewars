@@ -3336,3 +3336,34 @@ function squaresNeeded(n) {
 
   return num;
 }
+/**
+ * Returns a time string in the "mm:ss" format.
+ *
+ * @param {number} minutes - The number of minutes (non-negative integer).
+ * @param {number} seconds - The number of seconds (non-negative integer).
+ * @return {string} - The time string in the "mm:ss" format.
+ *
+ * @example
+ *   formatTime(5, 30) => "05:30"
+ *   formatTime(1, 15) => "01:15"
+ *   formatTime(0, 45) => "00:45"
+ *   formatTime(0, 0) => "00:00"
+ */
+function formatTime(minutes, seconds) {
+  let res = "";
+  if (minutes < 10) {
+    res += "0";
+    res += minutes;
+    res += ":";
+  } else {
+    res += minutes;
+    res += ":";
+  }
+  if (seconds < 10) {
+    res += "0";
+    res += seconds;
+  } else {
+    res += seconds;
+  }
+  return res;
+}
