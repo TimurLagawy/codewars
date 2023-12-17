@@ -3379,7 +3379,7 @@ function formatTime(minutes, seconds) {
  *   reverseString('12345') => '54321'
  */
 function reverseString(str) {
-  let res = '';
+  let res = "";
   for (let i = str.length - 1; i >= 0; i -= 1) {
     res += str[i];
   }
@@ -3398,8 +3398,8 @@ function reverseString(str) {
  *   orderAlphabetically('abc123xyz') => '123abcxyz'
  */
 function orderAlphabetically(str) {
-  const alpha = ' 1234567890abcdefghijklmnopqrstuvwxyz';
-  let res = '';
+  const alpha = " 1234567890abcdefghijklmnopqrstuvwxyz";
+  let res = "";
   for (let i = 0; i < alpha.length; i += 1) {
     for (let l = 0; l < str.length; l += 1) {
       if (str[l] === alpha[i]) {
@@ -3425,7 +3425,7 @@ function orderAlphabetically(str) {
  *   countVowels('XYZ') => 1
  */
 function countVowels(str) {
-  const vowels = 'aeiouyAEIOUY';
+  const vowels = "aeiouyAEIOUY";
   let res = 0;
   for (let i = 0; i < str.length; i += 1) {
     for (let l = 0; l < vowels.length; l += 1) {
@@ -3449,7 +3449,7 @@ function countVowels(str) {
  *   getFirstChar('') => ''
  */
 function getFirstChar(value) {
-  let res = '';
+  let res = "";
   if (value.length > 0) {
     // eslint-disable-next-line prefer-destructuring
     res = value[0];
@@ -3492,20 +3492,20 @@ function isString(value) {
     res = true;
   }
   return res; */
-  return typeof value === 'string' || value instanceof String;
+  return typeof value === "string" || value instanceof String;
 }
 
 /**
- * Removes leading and trailing whitespace characters from the string.
+ * Removes only leading whitespace characters from the string.
  *
- * @param {string} value - The input string to remove leading and trailing whitespaces from.
- * @return {string} - The string with leading and trailing whitespaces removed.
+ * @param {string} value - The input string to remove leading whitespaces from.
+ * @return {string} - The string with leading whitespaces removed.
  *
  * @example
- *   removeLeadingAndTrailingWhitespaces('  Abracadabra') => 'Abracadabra'
- *   removeLeadingAndTrailingWhitespaces('cat ') => 'cat'
- *   removeLeadingAndTrailingWhitespaces('\t\t\tHello, World! ') => 'Hello, World!'
+ *   removeLeadingWhitespaces('  Abracadabra') => 'Abracadabra'
+ *   removeLeadingWhitespaces('cat ') => 'cat '
+ *   removeLeadingWhitespaces('\t\t\tHello, World! ') => 'Hello, World! '
  */
-function removeLeadingAndTrailingWhitespaces(value) {
-  return value.trim();
+function removeLeadingWhitespaces(value) {
+  return value.replace(/^\s+/, "");
 }
