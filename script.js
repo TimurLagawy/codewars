@@ -3367,3 +3367,21 @@ function formatTime(minutes, seconds) {
   }
   return res;
 }
+
+/**
+ * Returns a string in reverse order.
+ *
+ * @param {string} str - The input string.
+ * @return {string} - The string in reverse order.
+ *
+ * @example:
+ *   reverseString('abcdef') => 'fedcba'
+ *   reverseString('12345') => '54321'
+ */
+function reverseString(str) {
+  let res = '';
+  for (let i = str.length - 1; i >= 0; i -= 1) {
+    res += str[i];
+  }
+  return res;
+}
