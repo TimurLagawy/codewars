@@ -3471,3 +3471,26 @@ function getFirstChar(value) {
 function removeLeadingAndTrailingWhitespaces(value) {
   return value.trim();
 }
+
+/**
+ * Returns true if the value is a string, otherwise returns false.
+ *
+ * @param {string} value - The value to check if it's a string.
+ * @return {boolean} - True if the value is a string, false otherwise.
+ *
+ * @example
+ *   isString() => false
+ *   isString(null) => false
+ *   isString([]) => false
+ *   isString({}) => false
+ *   isString('test') => true
+ *   isString(new String('test')) => true
+ */
+function isString(value) {
+  /* let res = false;
+  if (typeof value === 'string') {
+    res = true;
+  }
+  return res; */
+  return typeof value === 'string' || value instanceof String;
+}
