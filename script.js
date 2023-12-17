@@ -3509,3 +3509,27 @@ function isString(value) {
 function removeLeadingWhitespaces(value) {
   return value.replace(/^\s+/, "");
 }
+
+/**
+ * Removes only trailing whitespace characters from the string.
+ *
+ * @param {string} value - The input string to remove trailing whitespaces from.
+ * @return {string} - The string with trailing whitespaces removed.
+ *
+ * @example
+ *   removeTrailingWhitespaces('  Abracadabra') => '  Abracadabra'
+ *   removeTrailingWhitespaces('cat ') => 'cat'
+ *   removeTrailingWhitespaces('\t\t\tHello, World! ') => '\t\t\tHello, World!'
+ */
+function removeTrailingWhitespaces(value) {
+  /* let res = '';
+  if (value[value.length - 1] === ' ') {
+    for (let i = 0; i < value.length - 1; i += 1) {
+      res += value[i];
+    }
+  } else {
+    res = value;
+  }
+  return res; */
+  return value.replace(/\s+$/, '');
+}
