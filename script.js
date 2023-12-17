@@ -3436,3 +3436,23 @@ function countVowels(str) {
   }
   return res;
 }
+
+/**
+ * Returns the first character of the given string.
+ *
+ * @param {string} value - The input string to extract the first character from.
+ * @return {string} - The first character of the string.
+ *
+ * @example
+ *   getFirstChar('John Doe') => 'J'
+ *   getFirstChar('cat') => 'c'
+ *   getFirstChar('') => ''
+ */
+function getFirstChar(value) {
+  let res = '';
+  if (value.length > 0) {
+    // eslint-disable-next-line prefer-destructuring
+    res = value[0];
+  }
+  return res;
+}
