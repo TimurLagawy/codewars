@@ -3385,3 +3385,27 @@ function reverseString(str) {
   }
   return res;
 }
+
+/**
+ * Returns a string with characters in alphabetical order.
+ *
+ * @param {string} str - The input string.
+ * @return {string} - The string in alphabetical order.
+ *
+ * @example:
+ *   orderAlphabetically('webmaster') => 'abeemrstw'
+ *   orderAlphabetically('textbook') => 'bekoottx'
+ *   orderAlphabetically('abc123xyz') => '123abcxyz'
+ */
+function orderAlphabetically(str) {
+  const alpha = ' 1234567890abcdefghijklmnopqrstuvwxyz';
+  let res = '';
+  for (let i = 0; i < alpha.length; i += 1) {
+    for (let l = 0; l < str.length; l += 1) {
+      if (str[l] === alpha[i]) {
+        res += str[l];
+      }
+    }
+  }
+  return res;
+}
