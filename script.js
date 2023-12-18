@@ -3613,7 +3613,7 @@ function sumOfCodes(str) {
  *   startsWith('Hello World', 'Hello') => true
  */
 function startsWith(str, substr) {
-  let res = '';
+  let res = "";
   for (let i = 0; i < substr.length; i += 1) {
     res += str[i];
   }
@@ -3685,7 +3685,7 @@ function containsSubstring(str, substring) {
  */
 function isPalindrome(str) {
   let res = true;
-  const str1 = str.toLowerCase().replace(/[^a-zA-Z0-9]/g, ''); // Remove non-alphanumeric characters
+  const str1 = str.toLowerCase().replace(/[^a-zA-Z0-9]/g, ""); // Remove non-alphanumeric characters
   for (let i = 0; i < Math.round(str1.length / 2); i += 1) {
     if (str1[i] !== str1[str1.length - 1 - i]) {
       res = false;
@@ -3708,8 +3708,8 @@ function isPalindrome(str) {
  *   findLongestWord('No words here') => 'words'
  */
 function findLongestWord(sentence) {
-  const massOfWords = sentence.split(' ');
-  let largestWord = '';
+  const massOfWords = sentence.split(" ");
+  let largestWord = "";
   for (let i = 0; i < massOfWords.length; i += 1) {
     if (largestWord.length < massOfWords[i].length) {
       largestWord = massOfWords[i];
@@ -3729,11 +3729,37 @@ function findLongestWord(sentence) {
  *   reverseWords('The Quick Brown Fox') => 'ehT kciuQ nworB xoF'
  */
 function reverseWords(str) {
-  const words = str.split(' ');
+  const words = str.split(" ");
 
   for (let i = 0; i < words.length; i += 1) {
-    words[i] = words[i].split('').reverse().join('');
+    words[i] = words[i].split("").reverse().join("");
   }
 
-  return words.join(' ');
+  return words.join(" ");
+}
+
+/**
+ * Inverts the case of each character in the given string.
+ *
+ * @param {string} str - The input string.
+ * @returns {string} - The string with the case of each character inverted.
+ *
+ * @example
+ *   invertCase('Hello, World!') =>  'hELLO, wORLD!'
+ *   invertCase('JavaScript is Fun') => 'jAVAsCRIPT IS fUN'
+ *   invertCase('12345') => '12345'
+ */
+function invertCase(str) {
+  let res = "";
+  for (let i = 0; i < str.length; i += 1) {
+    const letter = str[i];
+
+    if (letter === letter.toLowerCase()) {
+      res += letter.toUpperCase();
+    } else {
+      res += letter.toLowerCase();
+    }
+  }
+
+  return res;
 }
