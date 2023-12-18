@@ -3694,3 +3694,26 @@ function isPalindrome(str) {
   }
   return res;
 }
+
+/**
+ * Find the longest word in the sentence. If there are multiple longest words,
+ * the function returns the first one encountered.
+ *
+ * @param {string} sentence - The input sentence.
+ * @returns {string} - The longest word in the sentence.
+ *
+ * @example:
+ *   findLongestWord('The quick brown fox') => 'quick'
+ *   findLongestWord('A long and winding road') => 'winding'
+ *   findLongestWord('No words here') => 'words'
+ */
+function findLongestWord(sentence) {
+  const massOfWords = sentence.split(' ');
+  let largestWord = '';
+  for (let i = 0; i < massOfWords.length; i += 1) {
+    if (largestWord.length < massOfWords[i].length) {
+      largestWord = massOfWords[i];
+    }
+  }
+  return largestWord;
+}
