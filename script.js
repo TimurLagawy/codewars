@@ -3531,7 +3531,7 @@ function removeTrailingWhitespaces(value) {
     res = value;
   }
   return res; */
-  return value.replace(/\s+$/, '');
+  return value.replace(/\s+$/, "");
 }
 
 /**
@@ -3593,11 +3593,29 @@ function sumOfCodes(str) {
 
   return str.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0); */
   let res = 0;
-  if (typeof str === 'string' && str.length > 0) {
+  if (typeof str === "string" && str.length > 0) {
     for (let i = 0; i < str.length; i += 1) {
-      // eslint-disable-next-line no-undef
       res += str.charCodeAt(i);
     }
   }
   return res;
+}
+
+/**
+ * Checks if a string starts with a specific substring.
+ *
+ * @param {string} str - The input string.
+ * @param {string} substr - The substring to check.
+ * @return {boolean} - Returns true if str starts with substr, false otherwise.
+ *
+ * @example:
+ *   startsWith('Hello World', 'World') => false
+ *   startsWith('Hello World', 'Hello') => true
+ */
+function startsWith(str, substr) {
+  let res = "";
+  for (let i = 0; i < substr.length; i += 1) {
+    res += str[i];
+  }
+  return res === substr;
 }
