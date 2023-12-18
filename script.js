@@ -3553,3 +3553,23 @@ function removeFirstOccurrences(str, value) {
   }
   return str;
 }
+
+/**
+ * Remove the last occurrence of a substring from a string.
+ *
+ * @param {string} str - The input string.
+ * @param {string} value - The substring to remove from the string.
+ * @return {string} - The string with the last occurrence of the substring removed.
+ *
+ * @example
+ *   removeLastOccurrences('To be or not to be', 'be') => 'To be or not to '.
+ *   removeLastOccurrences('I like legends', 'end') => 'I like legs'.
+ *   removeLastOccurrences('ABABAB', 'BA') => 'ABAB'.
+ */
+function removeLastOccurrences(str, value) {
+  const index = str.lastIndexOf(value);
+  if (index !== -1) {
+    return str.slice(0, index) + str.slice(index + value.length);
+  }
+  return str;
+}
