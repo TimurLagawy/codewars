@@ -3644,3 +3644,28 @@ function endsWith(str, substr) {
   return res1; */
   return str.endsWith(substr);
 }
+
+/**
+ * Checks if a given string contains a specified substring.
+ *
+ * @param {string} str - The input string to search within.
+ * @param {string} substring - The substring to check for in the input string.
+ * @returns {boolean} - True if the input string contains the specified substring, false otherwise.
+ *
+ * @example
+ *   containsSubstring('Hello, World!', 'World') => true
+ *   containsSubstring('JavaScript is Fun', 'Python') => false
+ *   containsSubstring('12345', '34') => true
+ */
+function containsSubstring(str, substring) {
+  /* let res = '';
+  for (let i = 0; i < str.length; i += 1) {
+    for (let l = 0; l < substring.length; l += 1) {
+      if (substring[l] === str[i]) {
+        res += substring[l];
+      }
+    }
+  }
+  return res === substring; */
+  return str.includes(substring);
+}
