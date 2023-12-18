@@ -3669,3 +3669,28 @@ function containsSubstring(str, substring) {
   return res === substring; */
   return str.includes(substring);
 }
+
+/**
+ * Returns true if the string is a palindrome; otherwise false.
+ * https://en.wikipedia.org/wiki/Palindrome
+ *
+ * @param {string} str - The input string.
+ * @return {bool} - True if the string is a palindrome, false otherwise.
+ *
+ * @example:
+ *   isPalindrome('madam') => true
+ *   isPalindrome('racecar') => true
+ *   isPalindrome('apple') => false
+ *   isPalindrome('No lemon, no melon') => true
+ */
+function isPalindrome(str) {
+  let res = true;
+  const str1 = str.toLowerCase().replace(/[^a-zA-Z0-9]/g, ''); // Remove non-alphanumeric characters
+  for (let i = 0; i < Math.round(str1.length / 2); i += 1) {
+    if (str1[i] !== str1[str1.length - 1 - i]) {
+      res = false;
+      break;
+    }
+  }
+  return res;
+}
