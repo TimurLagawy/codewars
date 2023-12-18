@@ -3794,3 +3794,18 @@ function getStringFromTemplate(firstName, lastName) {
 function extractNameFromTemplate(value) {
   return value.substring(7, value.length - 1);
 }
+
+/**
+ * Remove the first and last angle brackets from tag string
+ *
+ * @param {string} str - The input tag.
+ * @return {string} - The tag without the first and last angle brackets.
+ *
+ * @example
+ *   unbracketTag('<div>') => 'div'
+ *   unbracketTag('<span>') => 'span'
+ *   unbracketTag('<a>') => 'a'
+ */
+function unbracketTag(str) {
+  return str.substring(1, str.length - 1);
+}
