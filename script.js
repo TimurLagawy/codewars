@@ -3573,3 +3573,31 @@ function removeLastOccurrences(str, value) {
   }
   return str;
 }
+
+/**
+ * Calculate the sum of character codes of the given string.
+ *
+ * @param {string} str - The input string.
+ * @return {number} - The sum of character codes of the string.
+ *
+ * @example
+ *   sumOfCodes('My String') => 861 (77 + 121 + 32 + 83 + 116 + 114 + 105 + 110 + 103 = 861)
+ *   sumOfCodes('12345') => 255 (49 + 50 + 51 + 52 + 53 = 255)
+ *   sumOfCodes('') => 0
+ *   sumOfCodes() => 0
+ */
+function sumOfCodes(str) {
+  /* if (typeof str !== 'string') {
+    return 0;
+  }
+
+  return str.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0); */
+  let res = 0;
+  if (typeof str === 'string' && str.length > 0) {
+    for (let i = 0; i < str.length; i += 1) {
+      // eslint-disable-next-line no-undef
+      res += str.charCodeAt(i);
+    }
+  }
+  return res;
+}
