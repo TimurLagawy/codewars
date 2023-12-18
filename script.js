@@ -3780,3 +3780,17 @@ function invertCase(str) {
 function getStringFromTemplate(firstName, lastName) {
   return `Hello, ${firstName} ${lastName}!`;
 }
+
+/**
+ * Extracts a name from template string 'Hello, First_Name Last_Name!'.
+ *
+ * @param {string} value - The input value.
+ * @return {string} - The name extracted from the template.
+ *
+ * @example
+ *   extractNameFromTemplate('Hello, John Doe!') => 'John Doe'
+ *   extractNameFromTemplate('Hello, Chuck Norris!') => 'Chuck Norris'
+ */
+function extractNameFromTemplate(value) {
+  return value.substring(7, value.length - 1);
+}
