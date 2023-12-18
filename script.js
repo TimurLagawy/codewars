@@ -3763,3 +3763,20 @@ function invertCase(str) {
 
   return res;
 }
+
+/**
+ * Returns the result of string template and given parameters firstName and lastName.
+ * Please do not use concatenation, use template string :
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings
+ *
+ * @param {string} firstName - The first name to include in the template.
+ * @param {string} lastName - The last name to include in the template.
+ * @return {string} - The formatted string generated from the template.
+ *
+ * @example
+ *   getStringFromTemplate('John','Doe') => 'Hello, John Doe!'
+ *   getStringFromTemplate('Chuck','Norris') => 'Hello, Chuck Norris!'
+ */
+function getStringFromTemplate(firstName, lastName) {
+  return `Hello, ${firstName} ${lastName}!`;
+}
