@@ -3717,3 +3717,23 @@ function findLongestWord(sentence) {
   }
   return largestWord;
 }
+
+/**
+ * Returns the string where each word is reversed.
+ *
+ * @param {string} str - The input string.
+ * @return {string} - The string where each word is reversed.
+ *
+ * @example:
+ *   reverseWords('Hello World') => 'olleH dlroW'
+ *   reverseWords('The Quick Brown Fox') => 'ehT kciuQ nworB xoF'
+ */
+function reverseWords(str) {
+  const words = str.split(' ');
+
+  for (let i = 0; i < words.length; i += 1) {
+    words[i] = words[i].split('').reverse().join('');
+  }
+
+  return words.join(' ');
+}
