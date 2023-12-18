@@ -3533,3 +3533,23 @@ function removeTrailingWhitespaces(value) {
   return res; */
   return value.replace(/\s+$/, '');
 }
+
+/**
+ * Remove the first occurrence of a substring from a string.
+ *
+ * @param {string} str - The input string.
+ * @param {string} value - The substring to remove from the string.
+ * @return {string} - The string with the first occurrence of the substring removed.
+ *
+ * @example
+ *   removeFirstOccurrences('To be or not to be', 'be') => 'To  or not to be'.
+ *   removeFirstOccurrences('I like legends', 'end') => 'I like legs'.
+ *   removeFirstOccurrences('ABABAB', 'BA') => 'ABAB'.
+ */
+function removeFirstOccurrences(str, value) {
+  const index = str.indexOf(value);
+  if (index !== -1) {
+    return str.slice(0, index) + str.slice(index + value.length);
+  }
+  return str;
+}
