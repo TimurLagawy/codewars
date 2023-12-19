@@ -3826,7 +3826,7 @@ function unbracketTag(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-  return str.split(';');
+  return str.split(";");
 }
 
 /**
@@ -3846,9 +3846,9 @@ function extractEmails(str) {
  *
  */
 function encodeToRot13(str) {
-  const key1 = ' ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!?';
-  const key2 = ' NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm!?';
-  let res = '';
+  const key1 = " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!?";
+  const key2 = " NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm!?";
+  let res = "";
   for (let i = 0; i < str.length; i += 1) {
     for (let l = 0; l < key1.length; l += 1) {
       if (str[i] === key1[l]) {
@@ -3877,17 +3877,17 @@ function getFloatOnString(str) {
   }
   return res; */
   let res = NaN;
-  let str1 = '';
+  let str1 = "";
   for (let i = 0; i < str.length; i += 1) {
     if (
-      str[i] !== 'a' &&
-      str[i] !== 'b' &&
-      str[i] !== 'c' &&
-      str[i] !== 'd' &&
-      str[i] !== 'e' &&
-      str[i] !== 'f' &&
-      str[i] !== 'g' &&
-      str[i] !== 'h'
+      str[i] !== "a" &&
+      str[i] !== "b" &&
+      str[i] !== "c" &&
+      str[i] !== "d" &&
+      str[i] !== "e" &&
+      str[i] !== "f" &&
+      str[i] !== "g" &&
+      str[i] !== "h"
     ) {
       str1 += str[i];
     } else {
@@ -3898,4 +3898,26 @@ function getFloatOnString(str) {
     res = +str1;
   }
   return res;
+}
+
+/**
+ * Returns the largest integer greater than or equal to a given number.
+ *
+ * @param {number} number
+ * @return {number}
+ *
+ * @example:
+ * 5.1  => 6
+ * -5.9 => -5
+ */
+function roundToLargestInteger(number) {
+  /* let res;
+  if (number > 0) {
+    res = Math.floor(-number);
+    res = -res;
+  } else {
+    res = Math.floor(number);
+  }
+  return res; */
+  return Math.ceil(number);
 }
