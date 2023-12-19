@@ -4014,3 +4014,23 @@ function getIntegerPartNumber(number) {
   return res; */
   return Math.trunc(number);
 }
+
+/**
+ * Returns whether a number is a safe integer.
+ *
+ * @param {number} number
+ * @return {boolean}
+ *
+ * @example:
+ * 10       => true
+ * 3.5      => false
+ * 2 ** 53  => false
+ */
+function isSafeInteger(number) {
+  /* let res = false;
+  if (number % 1 === 0 && number < 214783648 && number > -214783648) {
+    res = true;
+  }
+  return res; */
+  return Number.isSafeInteger(number);
+}
