@@ -3940,3 +3940,31 @@ function getHypotenuse(a, b) {
   }
   return Math.sqrt(sumOfSquares);
 }
+
+/**
+ * Returns count of odd numbers from zero to the resulting number.
+ * The resulting number is taken into account.
+ *
+ * @param {number} number
+ * @return {number}
+ *
+ * @example:
+ * 4  => 2
+ * 5  => 3
+ * 10 => 5
+ * 15 => 8
+ */
+function getCountOfOddNumbers(number) {
+  /* let n = 0;
+  for (let i = 0; i <= number; i += 1) {
+    if (i % 2 !== 0) {
+      n += 1;
+    }
+  }
+  return n; */
+  if (number < 0) {
+    // eslint-disable-next-line no-param-reassign
+    number = -number;
+  }
+  return Math.floor((number + 1) / 2);
+}
