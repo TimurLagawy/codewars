@@ -3921,3 +3921,22 @@ function roundToLargestInteger(number) {
   return res; */
   return Math.ceil(number);
 }
+
+/**
+ * Returns the length of the hypotenuse of a right triangle.
+ *
+ * @param {number} a
+ * @param {number} b
+ * @return {number}
+ *
+ * @example:
+ * 3, 4 => 5
+ */
+function getHypotenuse(a, b) {
+  const sumOfSquares = a ** 2 + b ** 2;
+
+  if (sumOfSquares > Number.MAX_SAFE_INTEGER) {
+    return `1.7976931348623157e+308`;
+  }
+  return Math.sqrt(sumOfSquares);
+}
