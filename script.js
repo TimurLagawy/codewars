@@ -3968,3 +3968,26 @@ function getCountOfOddNumbers(number) {
   }
   return Math.floor((number + 1) / 2);
 }
+
+/**
+ * Returns the largest number.
+ *
+ * @param {number} firstNumber
+ * @param {number} secondNumber
+ * @return {number}
+ *
+ * @example:
+ * 1, 2   => 2
+ * -5, -6 => -5
+ * 0, 5   => 5
+ */
+function getMaxNumber(firstNumber, secondNumber) {
+  /* let res;
+  if (firstNumber >= secondNumber) {
+    res = firstNumber;
+  } else {
+    res = secondNumber;
+  }
+  return res; */
+  return Math.max(firstNumber, secondNumber);
+}
