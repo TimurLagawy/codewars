@@ -3991,3 +3991,26 @@ function getMaxNumber(firstNumber, secondNumber) {
   return res; */
   return Math.max(firstNumber, secondNumber);
 }
+
+/**
+ * Returns the integer part of a number by removing any fractional digits.
+ *
+ * @param {number} number
+ * @return {number}
+ *
+ * @example:
+ * 5.5  => 5
+ * 5.4  => 5
+ * -5.5 => -5
+ */
+function getIntegerPartNumber(number) {
+  /* let res;
+  if (number < 0) {
+    res = Math.floor(-number);
+    res = -res;
+  } else {
+    res = Math.floor(number);
+  }
+  return res; */
+  return Math.trunc(number);
+}
