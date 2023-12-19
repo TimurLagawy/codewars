@@ -4034,3 +4034,45 @@ function isSafeInteger(number) {
   return res; */
   return Number.isSafeInteger(number);
 }
+
+/**
+ * Returns a floating point number or, if the number cannot be parsed from the argument, returns NaN.
+ *
+ * @param {string} str
+ * @return {number | NaN}
+ *
+ * @example:
+ * '4.567abcdefgh' => 4.567
+ * 'abcdefgh'      => NaN
+ */
+function getFloatOnString(str) {
+  /* const number = Number(str);
+  let res = NaN;
+  if (typeof number === 'number') {
+    res = number;
+  }
+  return res; */
+  /* let res = NaN;
+  let str1 = '';
+  for (let i = 0; i < str.length; i += 1) {
+    if (
+      str[i] !== 'a' &&
+      str[i] !== 'b' &&
+      str[i] !== 'c' &&
+      str[i] !== 'd' &&
+      str[i] !== 'e' &&
+      str[i] !== 'f' &&
+      str[i] !== 'g' &&
+      str[i] !== 'h'
+    ) {
+      str1 += str[i];
+    } else {
+      break;
+    }
+  }
+  if (str1.length > 0) {
+    res = +str1;
+  }
+  return res; */
+  return parseFloat(str);
+}
