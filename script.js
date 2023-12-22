@@ -3261,7 +3261,6 @@ function getMatrixProduct(m1, m2) {
 }
 
 /* In the example below, 5 is the number passed into the first function. So it returns a function that takes an array and multiplies all elements in it by five.
-
 Translations and comments (and upvotes) welcome!
 
 Example
