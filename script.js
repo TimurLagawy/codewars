@@ -3080,7 +3080,6 @@ function getDigitalRoot(num) {
  *
  * @param {array} position
  * @return {string}
- *
  * @example
  *
  *   [[ 'X',   ,'0' ],
